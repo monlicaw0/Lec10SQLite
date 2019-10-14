@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+android:orientation="vertical">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit OR Delete Movie"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+    <EditText
+            android:id="@+id/inputIdEDT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Movie ID"
+            android:layout_marginTop="8dp"/>
+    <EditText
+            android:id="@+id/inputTitleEDT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Movie Title"
+            android:layout_marginTop="8dp"/>
+    <EditText
+            android:id="@+id/inputYearEDT"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year"
+            android:layout_marginTop="8dp"/>
+
+    <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="#ee009438"
+            android:text="Update"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:onClick="clickUpdateMovie"/>
+    <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="#f25669"
+            android:text="Delete"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:onClick="clickDeleteMovie"/>
+
+</LinearLayout>

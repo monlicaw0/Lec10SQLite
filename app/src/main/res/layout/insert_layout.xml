@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insert Movie"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"/>
+    <EditText
+            android:id="@+id/inputTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Movie Title"
+            android:layout_marginTop="8dp"/>
+    <EditText
+            android:id="@+id/inputYear"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year"
+            android:layout_marginTop="8dp"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="#ee1ece60"
+            android:text="insert Movie"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:id="@+id/btnAddMovie"/>
+
+</LinearLayout>
