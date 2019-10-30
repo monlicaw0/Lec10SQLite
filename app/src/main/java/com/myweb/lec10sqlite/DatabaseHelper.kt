@@ -15,7 +15,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null
         db?.execSQL(CREATE_TABLE)
         /// Test Insert Movie
         val  sqlInsert :String = "INSERT INTO $TABLE_NAME VALUES(1,'Up',2016)"
-       // Toast.makeText(MainActivity,"Error", Toast.LENGTH_LONG).show()
+
         db?.execSQL(sqlInsert);
     }
 

@@ -20,12 +20,9 @@ class MovieAdapter (val items : List<Movie>, val context: Context) : RecyclerVie
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title?.text =  items[position].title
         holder.year?.text = items[position].year.toString()
-
-
     }
 }
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    // Holds the TextView that will add each student to
     val title = view.title
     val year = view.year
 

@@ -33,25 +33,17 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT).show()
 
                 editDeleteDialog(position)
-
-
-
-
-
-
-            }
+           }
         })
     }
 
     fun callMovie(){
         movieList.clear();
-
         movieList.addAll(dbHandler!!.getAllMovies())
         //movieList.add(Movie(2, "Lipta",2134))
         recycler_view.adapter?.notifyDataSetChanged()
-        Toast.makeText(applicationContext,"Error",Toast.LENGTH_LONG).show()
+       // Toast.makeText(applicationContext,"Error",Toast.LENGTH_LONG).show()
     }
-
 
     fun addMovieDialog(v: View){
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.insert_layout, null)
@@ -68,23 +60,18 @@ class MainActivity : AppCompatActivity() {
             var result = dbHandler?.insertMovie(Movie(id=0,title = title,year = year))
 
             if(result!! > -1) {
-                Toast.makeText(applicationContext, "The student is added successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Inserted successfully", Toast.LENGTH_SHORT).show()
                 callMovie()
                 mAlertDialog.dismiss()
             }else{
                 Toast.makeText(applicationContext,"Error",Toast.LENGTH_LONG).show()
             }
         }
-
-
-
     }
 
 
     fun editDeleteDialog(position:Int){
-
         val mov = movieList[position]
-
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.edit_delete_layout, null)
         //AlertDialogBuilder
         mDialogView.inputIdEDT.setText(mov.id.toString())
@@ -104,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             var result = dbHandler?.updateMovie(Movie(id = id, title = title, year = year))
 
             if (result!! > -1) {
-                Toast.makeText(applicationContext, "The student is updated successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Updated successfully", Toast.LENGTH_SHORT).show()
                 callMovie()
 
             } else {
@@ -119,7 +106,7 @@ class MainActivity : AppCompatActivity() {
             val positiveButtonClick = { dialog: DialogInterface, which: Int ->
                 val result = dbHandler?.deleteMovie(mov.id)
                 if (result!! > -1) {
-                    Toast.makeText(applicationContext, "The student is deleted successfully", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "Deleted successfully", Toast.LENGTH_LONG).show()
                     callMovie()
                 } else {
                     Toast.makeText(applicationContext, "Error", Toast.LENGTH_LONG).show()
@@ -133,7 +120,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             builder.setTitle("Warning")
-            builder.setMessage("Do you want to delete the student?")
+            builder.setMessage("Do you want to delete the movie?")
             builder.setPositiveButton("No", negativeButtonClick)
             builder.setNegativeButton("Yes" , positiveButtonClick )
             builder.show()
